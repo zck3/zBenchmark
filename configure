@@ -1,0 +1,33 @@
+#!/bin/bash
+
+EVERYTHING_PRESENT=1
+if [[ "" == `which qmake6` ]]; then 
+	echo Missing qmake6. 
+	EVERYTHING_PRESENT=0
+else
+	echo Found qmake6.
+fi
+if [[ "" == `which make` ]]; then 
+	echo Missing make. 
+	EVERYTHING_PRESENT=0
+else
+	echo Found make.
+fi
+if [[ "" == `which g++` ]]; then 
+	echo Missing g++. 
+	EVERYTHING_PRESENT=0
+else
+	echo Found g++.
+fi
+if [[ "" == `which python3` ]]; then 
+	echo Missing python3.
+	EVERYTHING_PRESENT=0
+else
+	echo Found python3.
+fi
+if [[ $EVERYTHING_PRESENT -eq 0 ]]; then
+	echo You will need to install the missing software.
+else
+	echo Run install.sh to install the program.
+fi
+qmake6
